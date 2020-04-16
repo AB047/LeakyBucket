@@ -21,6 +21,8 @@ GLint cnt = 0;//Count of non-conforming packets
 int font;//font of text
 int op;
 
+// Use 0.9,0.9,0.9 for grey BG colour
+
 void number(GLint X, GLint Y, int n)
 {
 	int i;
@@ -92,7 +94,7 @@ void number(GLint X, GLint Y, int n)
 
 void draw_line(GLint* a, GLint* b) //DRAW LINES
 {
-	glColor3f(1.0, 1.0, 0.0);
+	glColor3f(0.0, 0.0, 0.0);
 	glEnable(GL_LINE_WIDTH);
 	glLineWidth(3);
 	glBegin(GL_LINES);
@@ -117,7 +119,7 @@ void draw_line_1() //DRAW LINES
 void non_polygon(GLint* B) //NON CONFORMING packets
 {
 
-	int i, x, x1;
+	int i, x, x1, v = 10;
 	cnt = 0;
 	for (i = 0; i < 9; i++)
 	{
@@ -133,7 +135,7 @@ void non_polygon(GLint* B) //NON CONFORMING packets
 			glVertex2i(x1, 980);
 			glVertex2i(x, 980);
 			glEnd();
-			glColor3f(0.0, 0.0, 0.0);//Outline over each packet
+			glColor3f(0.9,0.9,0.9);//Outline over each packet
 			glEnable(GL_LINE_WIDTH);
 			glLineWidth(10);
 			glBegin(GL_LINE_LOOP);
@@ -145,11 +147,26 @@ void non_polygon(GLint* B) //NON CONFORMING packets
 			glLineWidth(1);
 		}
 	}
+	glColor3f(0.0, 0.0, 0.0);
+	glBegin(GL_LINES);
+	glVertex2i(10, 930);
+	glVertex2i(980, 930);
+	glEnd();
+
+	for (i = 0; i < 11; i++)
+	{
+		v = i * 100 + 10;
+		glColor3f(0.0, 0.0, 0.0);//Marking on the packet line 
+		glBegin(GL_LINES);
+		glVertex2i(v, 930);
+		glVertex2i(v, 940);
+		glEnd();
+	}
 }
 
 void polygon(GLint* a) //CONFORMING PACKETS
 {
-	int i, x, x1, v = 10;
+	int i, x, x1;
 	for (i = 0; i < 9; i++)
 	{
 		if (a[i] == 1)
@@ -163,7 +180,7 @@ void polygon(GLint* a) //CONFORMING PACKETS
 			glVertex2i(x1, 980);
 			glVertex2i(x, 980);
 			glEnd();
-			glColor3f(0.0, 0.0, 0.0);
+			glColor3f(0.9, 0.9, 0.9);
 			glEnable(GL_LINE_WIDTH);
 			glLineWidth(10);
 			glBegin(GL_LINE_LOOP);//Outline over each packet
@@ -177,16 +194,9 @@ void polygon(GLint* a) //CONFORMING PACKETS
 		}
 
 	}
-	for (i = 0; i < 9; i++)
-	{
-		v = i * 100 + 10;
-		glColor3f(1.0, 1.0, 1.0);//Marking on the packet line 
-		glBegin(GL_LINES);
-		glVertex2i(v, 930);
-		glVertex2i(v, 940);
-		glEnd();
-	}
-	glColor3f(1.0, 1.0, 1.0);//Base of packet line on top
+	
+	
+	glColor3f(0.0, 0.0, 0.0);//Base of packet line on top
 	glBegin(GL_LINES);
 	glVertex2i(10, 930);
 	glVertex2i(980, 930);
@@ -235,7 +245,7 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 			if (C == 0)
 			{
 				glColor3f(1.0, 1.0, 1.0);
-				char f[] = "0packets";
+				char f[] = "0 packets";
 				glRasterPos2f(PF[0][0], PF[0][1]);
 				for (e = 0; f[e] != '\0'; e++)
 					glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, f[e]);
@@ -314,27 +324,28 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 
 			if (C == 0)
 			{
-				glColor3f(1.0, 1.0, 1.0);
+				glColor3f(0.5, 0.0, 0.0);
 				char f[] = "0packets";
 				glRasterPos2f(PF[0][0], PF[0][1]);
 				for (e = 0; f[e] != '\0'; e++)
 					glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, f[e]);
 			}
 			else if (C == 1) {
-				glColor3f(1.0, 1.0, 1.0);	char g[] = "1 packets";
+				glColor3f(0.5, 0.0, 0.0);
+				char g[] = "1 packets";
 				glRasterPos2f(PF[0][0], PF[0][1]);
 				for (e = 0; g[e] != '\0'; e++)
 					glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, g[e]);
 			}
 			else if (C == 2) {
-				glColor3f(1.0, 1.0, 1.0);
+				glColor3f(0.5, 0.0, 0.0);
 				char h[] = "2 packets";
 				glRasterPos2f(PF[0][0], PF[0][1]);;
 				for (e = 0; h[e] != '\0'; e++)
 					glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, h[e]);
 			}
 			else if (C == 3) {
-				glColor3f(1.0, 1.0, 1.0);
+				glColor3f(0.5, 0.0, 0.0);
 
 				char J[] = "3 packets";
 				glRasterPos2f(PF[0][0], PF[0][1]);
@@ -342,42 +353,42 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 					glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, J[e]);
 			}
 			else if (C == 4) {
-				glColor3f(1.0, 1.0, 1.0);
+				glColor3f(0.5, 0.0, 0.0);
 				char k[] = "4 packets";
 				glRasterPos2f(PF[0][0], PF[0][1]);
 				for (e = 0; k[e] != '\0'; e++)
 					glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, k[e]);
 			}
 			else if (C == 5) {
-				glColor3f(1.0, 1.0, 1.0);
+				glColor3f(0.5, 0.0, 0.0);
 				char l[] = "5 packets";
 				glRasterPos2f(PF[0][0], PF[0][1]);
 				for (e = 0; l[e] != '\0'; e++)
 					glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, l[e]);
 			}
 			else if (C == 6) {
-				glColor3f(1.0, 1.0, 1.0);
+				glColor3f(0.5, 0.0, 0.0);
 				char m[] = "6 packets";
 				glRasterPos2f(PF[0][0], PF[0][1]);
 				for (e = 0; m[e] != '\0'; e++)
 					glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, m[e]);
 			}
 			else if (C == 7) {
-				glColor3f(1.0, 1.0, 1.0);
+				glColor3f(0.5, 0.0, 0.0);
 				char N[] = "7 packets";
 				glRasterPos2f(PF[0][0], PF[0][1]);
 				for (e = 0; N[e] != '\0'; e++)
 					glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, N[e]);
 			}
 			else if (C == 8) {
-				glColor3f(1.0, 1.0, 1.0);
+				glColor3f(0.5, 0.0, 0.0);
 				char o[] = "8 packets";
 				glRasterPos2f(PF[0][0], PF[0][1]);
 				for (e = 0; o[e] != '\0'; e++)
 					glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, o[e]);
 			}
 			else if (C == 9) {
-				glColor3f(1.0, 1.0, 1.0);
+				glColor3f(0.5, 0.0, 0.0);
 				char p[] = "9 packets";
 				glRasterPos2f(PF[0][0], PF[0][1]);
 				for (e = 0; p[e] != '\0'; e++)
@@ -501,7 +512,8 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 						glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, f[e]);
 				}
 				else if (C == 1) {
-					glColor3f(1.0, 0.0, 0.0);	char g[] = "1 packets";
+					glColor3f(1.0, 0.0, 0.0);	
+					char g[] = "1 packets";
 					glRasterPos2f(PF[0][0], PF[0][1]);
 					for (e = 0; g[e] != '\0'; e++)
 						glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, g[e]);
@@ -695,15 +707,28 @@ void display2()//Bucket
 	}
 }
 
+void reassign_arr(const char* str, char* arr)
+{
+	int i = 0;
+	while ((*str) != '\0')
+	{
+		*arr = *str;
+		str++;
+		arr++;
+	}
+	*arr = '\0';
+}
 
 void display1()//Drawing the Graph
 {
+	
 	PI[0][1] = 10; PI[0][0] = 10;
 	PF[0][1] = 10; PF[0][0] = 10;
 	char str[9] = { '1','2','3','4','5','6','7','8','9' };
+	char print_str[1024];
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(5.0);
-	glColor3f(1.0, 1.0, 1.0);
+	glColor3f(0.0, 0.0, 0.0);
 	glBegin(GL_LINES);
 	glVertex2i(10, 10);
 	glVertex2i(980, 10);
@@ -712,19 +737,19 @@ void display1()//Drawing the Graph
 	glVertex2i(10, 10);
 	glVertex2i(10, 910);
 	glEnd();
-	glColor3f(1.0, 1.0, 1.0);
+	glColor3f(0.0, 0.0, 0.0);
 	glRasterPos2f(10.0, 25.0);
 	glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, '0');
 	int i, a = 10, b = 10;
 	for (i = 0; i < 9; i++)
 	{
 		a = a + 100;
-		glColor3f(1.0, 1.0, 1.0);
+		glColor3f(0.0, 0.0, 0.0);
 		glBegin(GL_LINES);
 		glVertex2i(a, 10);
 		glVertex2i(a, 20);
 		glEnd();
-		glColor3f(1.0, 1.0, 1.0);
+		glColor3f(0.0, 0.0, 0.0);
 		glRasterPos2f((GLfloat)a, 25.0);
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18,str[i]);
 	}
@@ -732,44 +757,65 @@ void display1()//Drawing the Graph
 	for (i = 0; i < 9; i++)
 	{
 		a = a + 100;
-		glColor3f(1.0, 1.0, 1.0);
+		glColor3f(0.0, 0.0, 0.0);
 		glBegin(GL_LINES);
 		glVertex2i(10, a);
-		glVertex2i(20, a);
+		glVertex2i(15, a);
 		glEnd();
 	}
 	polygon(A);
 	leaky_bucket();
-
-	glColor3f(1.0, 1.0, 0.0);
+	glColor3f(0.5, 0.0, 0.0);
 	char T[] = "KEY";
 	glRasterPos2f(600.0, 300.0);
 	for (i = 0; T[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, T[i]);
 
-	glColor3f(0.0, 1.0, 0.0);
-	char U[] = "GREEN";
+	glColor3f(0.0, 0.5, 0.0);
+	char U[] = "GREEN : CONFORMING PACKETS";
 	glRasterPos2f(600.0, 250.0);
 	for (i = 0; U[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, U[i]);
 
-	glColor3f(0.0, 1.0, 1.0);
+	/* glColor3f(0.0, 1.0, 1.0);
 	char V[] = ": CONFIRMING PACKETS";
 	glRasterPos2f(700.0, 250.0);
 	for (i = 0; V[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, V[i]);
+	*/
 
 	glColor3f(1.0, 0.0, 0.0);
-	char W[] = "RED";
+	char W[] = "RED : NON CONFORMING PACKETS";
 	glRasterPos2f(600.0, 200.0);
 	for (i = 0; W[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, W[i]);
 
+	/* 
 	glColor3f(0.0, 1.0, 1.0);
 	char X[] = ":  NON CONFORMING PACKETS";
 	glRasterPos2f(700.0, 200.0);
 	for (i = 0; X[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, X[i]);
+	*/
+
+	glColor3f(0.5, 0.0, 0.0);
+	reassign_arr("SCALE : ", print_str);
+	glRasterPos2f(800.0, 300.0);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+
+	glColor3f(0.0, 0.5, 0.0);
+	reassign_arr("X AXIS : 1 UNIT = 1 SECOND", print_str);
+	glRasterPos2f(800.0, 250.0);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+
+	glColor3f(1.0, 0.0, 0.0);
+	reassign_arr("Y AXIS : 1 UNIT = 1 PACKET ", print_str);
+	glRasterPos2f(800.0, 200.0);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+
 
 	glFlush();
 	if (op == 2)
@@ -810,25 +856,25 @@ void display()//Main Page
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, t[i]);
 
 	glColor3f(1.0, 0.0, 1.0);
-	char s[] = "1CR12CS094";
+	char s[] = "1JB17CS027";
 	glRasterPos2f(200.0, 350.0);
 	for (i = 0; s[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, s[i]);
 
 	glColor3f(0.0, 1.0, 1.0);
-	char u[] = "SHREYA K.S.";
+	char u[] = "ATUL M. BHARADWAJ";
 	glRasterPos2f(350.0, 350.0);
 	for (i = 0; u[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, u[i]);
 
 	glColor3f(1.0, 0.0, 1.0);
-	char v[] = "1CR12CS095";
+	char v[] = "1JB17CS021";
 	glRasterPos2f(200.0, 300.0);
 	for (i = 0; v[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, v[i]);
 
 	glColor3f(0.0, 1.0, 1.0);
-	char w[] = "SHREYA VISHWANATH RAO";
+	char w[] = "ANUSHA S.";
 	glRasterPos2f(350.0, 300.0);
 	for (i = 0; w[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, w[i]);
@@ -881,7 +927,7 @@ int main(int argc, char** argv)
 	glutAddMenuEntry("Exit", 3);
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
 	glutDisplayFunc(display);
-	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glClearColor(0.9, 0.9, 0.9, 1.0);
 	myinit();
 	glutMainLoop();
 	return 0;
