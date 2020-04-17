@@ -1,105 +1,105 @@
 ﻿  Source.cpp
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(43,20): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(43,17): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(48,20): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(48,17): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(53,20): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(53,17): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(58,20): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(58,17): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(63,20): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(63,17): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(68,20): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(68,17): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(73,20): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(73,17): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(78,20): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(78,17): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(83,20): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(83,17): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(88,20): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(88,17): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(138,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(183,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(249,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(249,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(255,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(255,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(262,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(262,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(270,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(270,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(277,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(277,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(284,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(284,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(291,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(291,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(298,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(298,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(305,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(305,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(312,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(312,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(329,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(329,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(336,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(336,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(343,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(343,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(351,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(351,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(358,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(358,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(365,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(365,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(372,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(372,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(379,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(379,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(386,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(386,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(393,36): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(393,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(429,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(429,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(435,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(435,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(442,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(442,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(450,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(450,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(457,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(457,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(464,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(464,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(471,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(471,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(478,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(478,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(485,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(485,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(492,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(492,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(510,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(510,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(516,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(516,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(523,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(523,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(531,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(531,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(538,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(538,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(545,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(545,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(552,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(552,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(559,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(559,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(566,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(566,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(573,37): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(573,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(929,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-  DabbaProject.vcxproj -> D:\GitRepos\LeakyBucket\DabbaProject\Debug\DabbaProject.exe
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(57,20): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(57,17): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(62,20): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(62,17): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(67,20): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(67,17): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(72,20): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(72,17): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(77,20): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(77,17): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(82,20): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(82,17): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(87,20): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(87,17): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(92,20): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(92,17): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(97,20): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(97,17): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(102,20): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(102,17): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(152,25): warning C4305:  'argument': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(197,27): warning C4305:  'argument': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(263,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(263,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(269,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(269,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(276,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(276,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(284,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(284,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(291,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(291,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(298,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(298,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(305,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(305,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(312,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(312,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(319,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(319,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(326,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(326,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(343,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(343,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(350,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(350,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(357,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(357,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(365,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(365,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(372,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(372,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(379,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(379,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(386,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(386,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(393,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(393,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(400,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(400,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(407,36): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(407,26): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(443,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(443,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(449,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(449,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(456,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(456,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(464,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(464,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(471,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(471,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(478,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(478,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(485,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(485,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(492,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(492,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(499,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(499,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(506,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(506,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(524,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(524,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(531,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(531,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(538,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(538,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(546,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(546,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(553,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(553,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(560,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(560,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(567,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(567,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(574,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(574,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(581,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(581,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(588,37): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(588,27): warning C4244:  'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(924,33): warning C4305:  'argument': truncation from 'double' to 'GLclampf'
+  DabbaProject.vcxproj -> D:\leaky bucket\LeakyBucket\DabbaProject\Debug\DabbaProject.exe

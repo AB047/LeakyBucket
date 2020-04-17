@@ -20,8 +20,22 @@ GLfloat z[2];
 GLint cnt = 0;//Count of non-conforming packets 
 int font;//font of text
 int op;
+char print_str[1024];
 
 // Use 0.9,0.9,0.9 for grey BG colour
+
+void reassign_arr(const char* str, char* arr)
+{
+	int i = 0;
+	while ((*str) != '\0')
+	{
+		*arr = *str;
+		str++;
+		arr++;
+	}
+	*arr = '\0';
+}
+
 
 void number(GLint X, GLint Y, int n)
 {
@@ -619,16 +633,16 @@ void display2()//Bucket
 	glEnd();
 
 	glColor3f(1.0, 1.0, 0.0);
-	char s[] = "INCOMING PACKETS";
+	reassign_arr("INCOMING PACKETS ", print_str);
 	glRasterPos2f(300.0, 800.0);
-	for (i = 0; s[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, s[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	glColor3f(2.0, 1.0, 1.0);
-	char O[] = "PICTORIAL REPRESENTATION";
+	reassign_arr("PICTORIAL REPRESENTATION ", print_str);
 	glRasterPos2f(300.0, 900.0);
-	for (i = 0; O[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, O[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	for (i = 0; i < 9; i++)//Droplet
 	{
@@ -659,10 +673,10 @@ void display2()//Bucket
 
 	}
 	glColor3f(1.0, 0.0, 1.0);
-	char f[] = "NON CONFORMING PACKETS";
+	reassign_arr("NON CONFORMING PACKETS", print_str);
 	glRasterPos2f(570.0, 525.0);
-	for (i = 0; f[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, f[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	
 
@@ -681,10 +695,10 @@ void display2()//Bucket
 	}
 
 	glColor3f(0.0, 1.0, 1.0);
-	char r[] = "CONFORMING PACKETS";
+	reassign_arr("CONFORMING PACKETS ", print_str);
 	glRasterPos2f(415.0, 290.0);
-	for (i = 0; r[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, r[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	k = 0;
 	for (j = 0; j < 9; j++)//525=Rim of bucket
@@ -707,17 +721,6 @@ void display2()//Bucket
 	}
 }
 
-void reassign_arr(const char* str, char* arr)
-{
-	int i = 0;
-	while ((*str) != '\0')
-	{
-		*arr = *str;
-		str++;
-		arr++;
-	}
-	*arr = '\0';
-}
 
 void display1()//Drawing the Graph
 {
@@ -725,7 +728,7 @@ void display1()//Drawing the Graph
 	PI[0][1] = 10; PI[0][0] = 10;
 	PF[0][1] = 10; PF[0][0] = 10;
 	char str[9] = { '1','2','3','4','5','6','7','8','9' };
-	char print_str[1024];
+
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(5.0);
 	glColor3f(0.0, 0.0, 0.0);
@@ -765,17 +768,18 @@ void display1()//Drawing the Graph
 	}
 	polygon(A);
 	leaky_bucket();
+
 	glColor3f(0.5, 0.0, 0.0);
-	char T[] = "KEY";
+	reassign_arr("KEY", print_str);
 	glRasterPos2f(600.0, 300.0);
-	for (i = 0; T[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, T[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	glColor3f(0.0, 0.5, 0.0);
-	char U[] = "GREEN : CONFORMING PACKETS";
+	reassign_arr("GREEN : CONFORMING PACKETS", print_str);
 	glRasterPos2f(600.0, 250.0);
-	for (i = 0; U[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, U[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	/* glColor3f(0.0, 1.0, 1.0);
 	char V[] = ": CONFIRMING PACKETS";
@@ -785,10 +789,10 @@ void display1()//Drawing the Graph
 	*/
 
 	glColor3f(1.0, 0.0, 0.0);
-	char W[] = "RED : NON CONFORMING PACKETS";
+	reassign_arr("RED : NON CONFORMING PACKETS", print_str);
 	glRasterPos2f(600.0, 200.0);
-	for (i = 0; W[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, W[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	/* 
 	glColor3f(0.0, 1.0, 1.0);
@@ -827,57 +831,47 @@ void display()//Main Page
 	int i;
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
-	char f[] = "LEAKY BUCKET ALGORITHM";
+	reassign_arr("LEAKY BUCKET ALGORITHM", print_str);
 	glRasterPos2f(400.0, 900.0);
-	for (i = 0; f[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, f[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, print_str[i]);
+
 	glColor3f(0.0, 0.0, 1.0);
-	char g[] = "WHERE";
+	reassign_arr("WHERE : ", print_str);
 	glRasterPos2f(300.0, 800.0);
-	for (i = 0; g[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, g[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
-	glColor3f(0.0, 1.0, 0.0);
-	char h[] = "PACKET SIZE (I) : 3";
+	glColor3f(0.0, 0.5, 0.0);
+	reassign_arr("PACKET SIZE (I) : 3", print_str);
+	glRasterPos2f(400.0, 800.0);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+
+	glColor3f(0.0, 0.5, 0.0);
+	reassign_arr("BUCKET DEPTH (L) : 9 ", print_str);
 	glRasterPos2f(400.0, 750.0);
-	for (i = 0; h[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, h[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
-	glColor3f(0.0, 1.0, 0.0);
-	char e[] = "BUCKET DEPTH (L) : 9";
-	glRasterPos2f(400.0, 700.0);
-	for (i = 0; e[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, e[i]);
-
-	glColor3f(1.0, 1.0, 0.0);
-	char t[] = "D1 BY:";
+	glColor3f(0.5, 0.0, 0.5);
+	reassign_arr("DONE BY:", print_str);
 	glRasterPos2f(200.0, 400.0);
-	for (i = 0; t[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, t[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	glColor3f(1.0, 0.0, 1.0);
-	char s[] = "1JB17CS027";
+	reassign_arr("1JB17CS027 : ATUL M. BHARADWAJ ", print_str);
 	glRasterPos2f(200.0, 350.0);
-	for (i = 0; s[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, s[i]);
-
-	glColor3f(0.0, 1.0, 1.0);
-	char u[] = "ATUL M. BHARADWAJ";
-	glRasterPos2f(350.0, 350.0);
-	for (i = 0; u[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, u[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	glColor3f(1.0, 0.0, 1.0);
-	char v[] = "1JB17CS021";
+	reassign_arr("1JB17CS021 : ANUSHA S. ", print_str);
 	glRasterPos2f(200.0, 300.0);
-	for (i = 0; v[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, v[i]);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
-	glColor3f(0.0, 1.0, 1.0);
-	char w[] = "ANUSHA S.";
-	glRasterPos2f(350.0, 300.0);
-	for (i = 0; w[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, w[i]);
 }
 
 
