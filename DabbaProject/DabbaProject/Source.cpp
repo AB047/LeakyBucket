@@ -52,7 +52,7 @@ void print_packet(GLint C)
 	glColor3f(0.5, 0.0, 0.0);
 	glRasterPos2f(PF[0][0] + 5, PF[0][1] + 5);
 	char packet_char = '0' + C;
-	if (C==9)
+	if (C == 9)
 	{
 		glRasterPos2f(PF[0][0] + 5, PF[0][1] - 30);
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, packet_char);
@@ -62,6 +62,7 @@ void print_packet(GLint C)
 	reassign_arr(" Packets", print_str);
 	for (int e = 0; print_str[e] != '\0'; e++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[e]);
+	
 }
 
 
@@ -160,6 +161,8 @@ void conf_packet(GLint* a) //CONFORMING PACKETS
 void leaky_bucket() // ALGORITHM :CALCULATION 
 {
 	GLint X, Y;
+	PI[0][1] = 10; PI[0][0] = 10;
+	PF[0][1] = 10; PF[0][0] = 10;
 	int i = 0, j, k, count = 0, C = 0, val, e;
 	for (i = 0; i < 9; i++)//Finding the initial packet postion
 	{
@@ -249,6 +252,8 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 
 void display_bucket()//Bucket
 {
+
+	leaky_bucket();
 	int i, j, k, Y1, Y2;
 	a[0] = 395.0; a[1] = 767.0;
 	b[0] = 405.0; b[1] = 767.0;
@@ -279,11 +284,11 @@ void display_bucket()//Bucket
 	glVertex2fv(z);
 	glEnd();
 
-	glColor3f(1.0, 1.0, 0.0);
-	print_message("INCOMING PACKETS ", 300.0, 800.0);
-
-	glColor3f(2.0, 1.0, 1.0);
+	glColor3f(0.5, 0.9, 0.0);
 	print_message("PICTORIAL REPRESENTATION ", 300.0, 900.0);
+
+	glColor3f(0.5, 0.5, 0.0);
+	print_message("INCOMING PACKETS ", 300.0, 800.0);
 
 	for (i = 0; i < 9; i++)//Droplet
 	{
@@ -313,7 +318,7 @@ void display_bucket()//Bucket
 		d[1] -= 30;
 
 	}
-	glColor3f(1.0, 0.0, 1.0);
+	glColor3f(0.5, 0.5, 0.0);
 	print_message("NON CONFORMING PACKETS", 570.0, 525.0);
 
 	for (j = 0; j < cnt; j++)//525=Rim of bucket
@@ -330,7 +335,7 @@ void display_bucket()//Bucket
 		glEnd();
 	}
 
-	glColor3f(0.0, 1.0, 1.0);
+	glColor3f(0.5, 0.5, 0.0);
 	print_message("CONFORMING PACKETS ", 415.0, 290.0);
 
 	k = 0;
@@ -431,6 +436,7 @@ void display_graph()//Drawing the Graph
 
 	glColor3f(0.5, 0.0, 0.0);
 	print_message("KEY", 600.0, 300.0);
+
 	glColor3f(0.0, 0.5, 0.0);
 	print_message("GREEN : CONFORMING PACKETS", 600.0, 250.0);
 
@@ -452,73 +458,41 @@ void display_graph()//Drawing the Graph
 void display_menu()//Main Page
 {
 	int i;
+
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0, 0.0, 0.0);
-	reassign_arr("LEAKY BUCKET ALGORITHM", print_str);
-	glRasterPos2f(400.0, 900.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, print_str[i]);
+	print_message("LEAKY BUCKET ALGORITHM ", 400.0, 900.0);
 
 	glColor3f(0.0, 0.0, 1.0);
-	reassign_arr("WHERE : ", print_str);
-	glRasterPos2f(300.0, 800.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+	print_message("WHERE : ", 300.0, 800.0);
 
 	glColor3f(0.0, 0.5, 0.0);
-	reassign_arr("PACKET SIZE (I) : 3", print_str);
-	glRasterPos2f(380.0, 800.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
-
+	print_message("PACKET SIZE (I) : 3 ", 380.0, 800.0);
+	
 	glColor3f(0.0, 0.5, 0.0);
-	reassign_arr("BUCKET DEPTH (L) : 9 ", print_str);
-	glRasterPos2f(380.0, 750.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
-
+	print_message("BUCKET DEPTH (L) : 9 ", 380.0, 750.0);
+	
 	glColor3f(0.5, 0.0, 0.0);
-	reassign_arr("PRESS : 1 FOR HOME PAGE", print_str);
-	glRasterPos2f(320.0, 650.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
-
+	print_message("PRESS : 1 FOR HOME PAGE ", 320.0, 650.0);
+	
 	glColor3f(0.5, 0.0, 0.0);
-	reassign_arr("2 FOR BUCKET", print_str);
-	glRasterPos2f(375.0, 600.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
-
+	print_message("2 FOR BUCKET", 375.0, 600.0);
+	
 	glColor3f(0.5, 0.0, 0.0);
-	reassign_arr("3 FOR GRAPH", print_str);
-	glRasterPos2f(375.0, 550.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
-
+	print_message("3 FOR GRAPH ", 375.0, 550.0);
+	
 	glColor3f(0.5, 0.0, 0.0);
-	reassign_arr("4 FOR EXIT", print_str);
-	glRasterPos2f(375.0, 500.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+	print_message("4 FOR EXIT ", 375.0, 500.0);
 
 	glColor3f(0.5, 0.0, 0.5);
-	reassign_arr("DONE BY:", print_str);
-	glRasterPos2f(200.0, 400.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
-
+	print_message("DONE BY: ", 200.0, 400.0);
+	
 	glColor3f(1.0, 0.0, 1.0);
-	reassign_arr("1JB17CS027 : ATUL M. BHARADWAJ ", print_str);
-	glRasterPos2f(200.0, 350.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
-
+	print_message("1JB17CS027 : ATUL M. BHARADWAJ ", 200.0, 350.0);
+	
 	glColor3f(1.0, 0.0, 1.0);
-	reassign_arr("1JB17CS021 : ANUSHA S. ", print_str);
-	glRasterPos2f(200.0, 300.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
-
+	print_message("1JB17CS021 : ANUSHA S. ", 200.0, 300.0);
+	
 	glFlush();
 	
 }
@@ -562,7 +536,7 @@ void myKeyboardFunc(unsigned char Key, int x, int y)
 	{
 	case '1': display_menu();
 		break;
-	case '2': display_bucket();
+	case '2':leaky_bucket(); display_bucket();
 		break;
 	case '3':display_graph();
 		break;
