@@ -19,8 +19,9 @@ GLfloat y[2];
 GLfloat z[2];
 GLint cnt = 0;//Count of non-conforming packets 
 int font;//font of text
-int op;
 char print_str[1024];
+
+void myKeyboardFunc(unsigned char Key, int x, int y);
 
 // Use 0.9,0.9,0.9 for grey BG colour
 
@@ -80,12 +81,10 @@ void draw_line_1() //DRAW LINES
 	glEnd();
 }
 
-// 
-
 void non_polygon(GLint* B) //NON CONFORMING packets
 {
 
-	int i, x, x1, v = 10;
+	int i, x, x1;
 	cnt = 0;
 	for (i = 0; i < 9; i++)
 	{
@@ -113,21 +112,8 @@ void non_polygon(GLint* B) //NON CONFORMING packets
 			glLineWidth(1);
 		}
 	}
-	glColor3f(0.0, 0.0, 0.0);
-	glBegin(GL_LINES);
-	glVertex2i(10, 930);
-	glVertex2i(980, 930);
-	glEnd();
 
-	for (i = 0; i < 11; i++)
-	{
-		v = i * 100 + 10;
-		glColor3f(0.0, 0.0, 0.0);//Marking on the packet line 
-		glBegin(GL_LINES);
-		glVertex2i(v, 930);
-		glVertex2i(v, 940);
-		glEnd();
-	}
+
 }
 
 void polygon(GLint* a) //CONFORMING PACKETS
@@ -160,13 +146,6 @@ void polygon(GLint* a) //CONFORMING PACKETS
 		}
 
 	}
-	
-	
-	glColor3f(0.0, 0.0, 0.0);//Base of packet line on top
-	glBegin(GL_LINES);
-	glVertex2i(10, 930);
-	glVertex2i(980, 930);
-	glEnd();
 }
 
 void leaky_bucket() // ALGORITHM :CALCULATION 
@@ -336,8 +315,6 @@ void display2()//Bucket
 	for (i = 0; print_str[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
-	
-
 	for (j = 0; j < cnt; j++)//525=Rim of bucket
 	{
 		Y1 = 525 - j * 30;
@@ -377,6 +354,7 @@ void display2()//Bucket
 		}
 
 	}
+	glFlush();
 }
 
 
@@ -386,6 +364,7 @@ void display1()//Drawing the Graph
 	PI[0][1] = 10; PI[0][0] = 10;
 	PF[0][1] = 10; PF[0][0] = 10;
 	char str[9] = { '1','2','3','4','5','6','7','8','9' };
+	int v = 10;
 
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(5.0);
@@ -424,8 +403,34 @@ void display1()//Drawing the Graph
 		glVertex2i(15, a);
 		glEnd();
 	}
+	
+	for (i = 0; i < 11; i++)
+	{
+		v = i * 100 + 10;
+		glColor3f(0.0, 0.0, 0.0);//Marking on the packet line 
+		glBegin(GL_LINES);
+		glVertex2i(v, 930);
+		glVertex2i(v, 940);
+		glEnd();
+	}
 	polygon(A);
 	leaky_bucket();
+
+	glColor3f(0.0, 0.0, 0.0);//Base of packet line on top
+	glBegin(GL_LINES);
+	glVertex2i(10, 930);
+	glVertex2i(980, 930);
+	glEnd();
+
+	for (i = 0; i < 11; i++)
+	{
+		v = i * 100 + 10;
+		glColor3f(0.0, 0.0, 0.0);//Marking on the packet line 
+		glBegin(GL_LINES);
+		glVertex2i(v, 930);
+		glVertex2i(v, 940);
+		glEnd();
+	}
 
 	glColor3f(0.5, 0.0, 0.0);
 	reassign_arr("KEY", print_str);
@@ -464,10 +469,7 @@ void display1()//Drawing the Graph
 	for (i = 0; print_str[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
-
 	glFlush();
-	if (op == 2)
-		display2();//Page displaying Bucket
 }
 
 void display()//Main Page
@@ -488,13 +490,37 @@ void display()//Main Page
 
 	glColor3f(0.0, 0.5, 0.0);
 	reassign_arr("PACKET SIZE (I) : 3", print_str);
-	glRasterPos2f(400.0, 800.0);
+	glRasterPos2f(380.0, 800.0);
 	for (i = 0; print_str[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	glColor3f(0.0, 0.5, 0.0);
 	reassign_arr("BUCKET DEPTH (L) : 9 ", print_str);
-	glRasterPos2f(400.0, 750.0);
+	glRasterPos2f(380.0, 750.0);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+
+	glColor3f(0.5, 0.0, 0.0);
+	reassign_arr("PRESS : g FOR GRAPH", print_str);
+	glRasterPos2f(300.0, 650.0);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+
+	glColor3f(0.5, 0.0, 0.0);
+	reassign_arr("b FOR BUCKET", print_str);
+	glRasterPos2f(375.0, 600.0);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+
+	glColor3f(0.5, 0.0, 0.0);
+	reassign_arr("h FOR HOME PAGE", print_str);
+	glRasterPos2f(375.0, 550.0);
+	for (i = 0; print_str[i] != '\0'; i++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+
+	glColor3f(0.5, 0.0, 0.0);
+	reassign_arr("e FOR EXIT", print_str);
+	glRasterPos2f(375.0, 500.0);
 	for (i = 0; print_str[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
@@ -516,22 +542,8 @@ void display()//Main Page
 	for (i = 0; print_str[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
-}
-
-
-void demo_menu(int id)
-{
-	op = id;
-	switch (id)
-	{
-	case 1: display1();
-		break;
-	case 2:display1();
-		break;
-	case 3:exit(0);
-		break;
-	}
-	glutPostRedisplay();
+	glFlush();
+	
 }
 
 void myinit()
@@ -559,11 +571,7 @@ int main(int argc, char** argv)
 	glutInitWindowSize(1000, 1000);
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow("Leaky Bucket");
-	glutCreateMenu(demo_menu);
-	glutAddMenuEntry("Graph", 1);
-	glutAddMenuEntry("Bucket", 2);
-	glutAddMenuEntry("Exit", 3);
-	glutAttachMenu(GLUT_RIGHT_BUTTON);
+	glutKeyboardFunc(myKeyboardFunc);
 	glutDisplayFunc(display);
 	glClearColor(0.9, 0.9, 0.9, 1.0);
 	myinit();
@@ -571,5 +579,19 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-
+void myKeyboardFunc(unsigned char Key, int x, int y)
+{
+	switch (Key)
+	{
+	case 'g': display1();
+		break;
+	case 'b': display2();
+		break;
+	case 'h':display();
+		break;
+	case 'e': exit(0);
+	default:
+		break;
+	}
+}
 

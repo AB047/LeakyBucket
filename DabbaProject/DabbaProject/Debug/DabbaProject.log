@@ -1,12 +1,12 @@
 ﻿  Source.cpp
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(43,39): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(43,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(47,40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(47,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(60,13): warning C4101: 'y': unreferenced local variable
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(60,10): warning C4101: 'x': unreferenced local variable
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(104,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(149,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(175,42): warning C4101: 'e': unreferenced local variable
-D:\GitRepos\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(568,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-  DabbaProject.vcxproj -> D:\GitRepos\LeakyBucket\DabbaProject\Debug\DabbaProject.exe
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(45,39): warning C4244:  'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(45,25): warning C4244:  'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(49,40): warning C4244:  'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(49,26): warning C4244:  'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(62,13): warning C4101:  'y': unreferenced local variable
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(62,10): warning C4101:  'x': unreferenced local variable
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(106,25): warning C4305:  'argument': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(138,27): warning C4305:  'argument': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(157,42): warning C4101:  'e': unreferenced local variable
+D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(584,33): warning C4305:  'argument': truncation from 'double' to 'GLclampf'
+  DabbaProject.vcxproj -> D:\leaky bucket\LeakyBucket\DabbaProject\Debug\DabbaProject.exe
