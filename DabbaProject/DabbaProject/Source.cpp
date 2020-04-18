@@ -37,6 +37,15 @@ void reassign_arr(const char* str, char* arr)
 	*arr = '\0';
 }
 
+void print_message(const char* str, GLfloat x, GLfloat y)
+{
+	reassign_arr(str, print_str);
+	glRasterPos2f(x, y);
+	for (int e = 0; print_str[e] != '\0'; e++)
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[e]);
+
+}
+
 
 void print_packet(GLint C)
 {
@@ -237,6 +246,7 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 	nonconf_packet(final_arr);
 }
 
+
 void display_bucket()//Bucket
 {
 	int i, j, k, Y1, Y2;
@@ -270,16 +280,10 @@ void display_bucket()//Bucket
 	glEnd();
 
 	glColor3f(1.0, 1.0, 0.0);
-	reassign_arr("INCOMING PACKETS ", print_str);
-	glRasterPos2f(300.0, 800.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+	print_message("INCOMING PACKETS ", 300.0, 800.0);
 
 	glColor3f(2.0, 1.0, 1.0);
-	reassign_arr("PICTORIAL REPRESENTATION ", print_str);
-	glRasterPos2f(300.0, 900.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+	print_message("PICTORIAL REPRESENTATION ", 300.0, 900.0);
 
 	for (i = 0; i < 9; i++)//Droplet
 	{
@@ -310,10 +314,7 @@ void display_bucket()//Bucket
 
 	}
 	glColor3f(1.0, 0.0, 1.0);
-	reassign_arr("NON CONFORMING PACKETS", print_str);
-	glRasterPos2f(570.0, 525.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+	print_message("NON CONFORMING PACKETS", 570.0, 525.0);
 
 	for (j = 0; j < cnt; j++)//525=Rim of bucket
 	{
@@ -330,10 +331,7 @@ void display_bucket()//Bucket
 	}
 
 	glColor3f(0.0, 1.0, 1.0);
-	reassign_arr("CONFORMING PACKETS ", print_str);
-	glRasterPos2f(415.0, 290.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+	print_message("CONFORMING PACKETS ", 415.0, 290.0);
 
 	k = 0;
 	for (j = 0; j < 9; j++)//525=Rim of bucket
@@ -360,7 +358,6 @@ void display_bucket()//Bucket
 
 void display_graph()//Drawing the Graph
 {
-	
 	PI[0][1] = 10; PI[0][0] = 10;
 	PF[0][1] = 10; PF[0][0] = 10;
 	char str[9] = { '1','2','3','4','5','6','7','8','9' };
@@ -433,42 +430,22 @@ void display_graph()//Drawing the Graph
 	}
 
 	glColor3f(0.5, 0.0, 0.0);
-	reassign_arr("KEY", print_str);
-	glRasterPos2f(600.0, 300.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
-
+	print_message("KEY", 600.0, 300.0);
 	glColor3f(0.0, 0.5, 0.0);
-	reassign_arr("GREEN : CONFORMING PACKETS", print_str);
-	glRasterPos2f(600.0, 250.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+	print_message("GREEN : CONFORMING PACKETS", 600.0, 250.0);
 
 	glColor3f(1.0, 0.0, 0.0);
-	reassign_arr("RED : NON CONFORMING PACKETS", print_str);
-	glRasterPos2f(600.0, 200.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
-
-
+	print_message("RED : NON CONFORMING PACKETS", 600.0, 200.0);
+	
 	glColor3f(0.5, 0.0, 0.0);
-	reassign_arr("SCALE : ", print_str);
-	glRasterPos2f(800.0, 300.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+	print_message("SCALE : ", 800.0, 300.0);
 
 	glColor3f(0.0, 0.5, 0.0);
-	reassign_arr("X AXIS : 1 UNIT = 1 SECOND", print_str);
-	glRasterPos2f(800.0, 250.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
+	print_message("X AXIS : 1 UNIT = 1 SECOND", 800.0, 250.0);
 
 	glColor3f(1.0, 0.0, 0.0);
-	reassign_arr("Y AXIS : 1 UNIT = 1 PACKET ", print_str);
-	glRasterPos2f(800.0, 200.0);
-	for (i = 0; print_str[i] != '\0'; i++)
-		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
-
+	print_message("Y AXIS : 1 UNIT = 1 PACKET", 800.0, 200.0);
+	
 	glFlush();
 }
 
