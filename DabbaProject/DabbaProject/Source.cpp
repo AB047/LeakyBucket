@@ -7,8 +7,8 @@
 
 GLint PI[1][2] = { 10,10 };//Initial (x,y) of the graph
 GLint PF[1][2] = { 10,10 };//Final (x,y) of the graph
-GLint A[9] = { 0 };//Original array for the packet input
-GLint B[9] = { 0 };//Final output to store the non-conforming/conforming packets
+GLint input_arr[9] = { 0 };//Original array for the packet input
+GLint final_arr[9] = { 0 };//Final output to store the non-conforming/conforming packets
 GLfloat a[2];//Droplets
 GLfloat b[2];
 GLfloat c[2];
@@ -56,7 +56,7 @@ void print_packet(GLint C)
 }
 
 
-void draw_line(GLint* a, GLint* b, GLint NoPackets) //DRAW LINES
+void draw_graph(GLint* a, GLint* b, GLint NoPackets) //DRAW LINES
 {
 	GLfloat x, y;
 	char packet_char = '0' + NoPackets;
@@ -81,14 +81,14 @@ void draw_line_1() //DRAW LINES
 	glEnd();
 }
 
-void non_polygon(GLint* B) //NON CONFORMING packets
+void nonconf_packet(GLint* final_arr) //NON CONFORMING packets
 {
 
 	int i, x, x1;
 	cnt = 0;
 	for (i = 0; i < 9; i++)
 	{
-		if (B[i] == 1)
+		if (final_arr[i] == 1)
 		{
 			cnt++;
 			x = (i * 100) + 10;
@@ -116,7 +116,7 @@ void non_polygon(GLint* B) //NON CONFORMING packets
 
 }
 
-void polygon(GLint* a) //CONFORMING PACKETS
+void conf_packet(GLint* a) //CONFORMING PACKETS
 {
 	int i, x, x1;
 	for (i = 0; i < 9; i++)
@@ -154,7 +154,7 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 	int i = 0, j, k, count = 0, C = 0, val, e;
 	for (i = 0; i < 9; i++)//Finding the initial packet postion
 	{
-		if (A[i] == 0)
+		if (input_arr[i] == 0)
 			count++;
 		else
 			break;
@@ -166,7 +166,7 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 	{
 
 		count = 0;
-		if (A[j] == 1)
+		if (input_arr[j] == 1)
 		{
 			PF[0][1] += 300;
 			if(C+3<=9)
@@ -174,10 +174,10 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 			if (PF[0][1] > 910)
 			{
 				PF[0][1] -= 300;
-				B[j] = 1;
+				final_arr[j] = 1;
 
 			}
-			draw_line(PI[0], PF[0], C);//Vertical Line,I=3
+			draw_graph(PI[0], PF[0], C);//Vertical Line,I=3
 
 			X = PF[0][1] + 2;
 			Y = PF[0][1] + 2;
@@ -191,7 +191,7 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 
 			print_packet(C);
 
-			draw_line(PI[0], PF[0], C);//Draw the drop
+			draw_graph(PI[0], PF[0], C);//Draw the drop
 			PI[0][0] = PF[0][0];
 			PI[0][1] = PF[0][1];
 			j++;
@@ -201,7 +201,7 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 		{
 			for (k = j; k < 9; k++)//Finding the next packet 
 			{
-				if (A[k] == 0)
+				if (input_arr[k] == 0)
 				{
 					count++;
 					C -= 1;
@@ -216,7 +216,7 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 				val = 10 - PF[0][1];
 				PF[0][0] -= val;
 				PF[0][1] = 10;
-				draw_line(PI[0], PF[0], C);
+				draw_graph(PI[0], PF[0], C);
 
 				PI[0][0] = PF[0][0] + val;
 				PI[0][1] = PF[0][1];
@@ -225,7 +225,7 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 			}
 			else
 			{
-				draw_line(PI[0], PF[0], C);
+				draw_graph(PI[0], PF[0], C);
 
 				PI[0][0] = PF[0][0];
 				PI[0][1] = PF[0][1];
@@ -234,10 +234,10 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 		}
 
 	}
-	non_polygon(B);
+	nonconf_packet(final_arr);
 }
 
-void display2()//Bucket
+void display_bucket()//Bucket
 {
 	int i, j, k, Y1, Y2;
 	a[0] = 395.0; a[1] = 767.0;
@@ -283,7 +283,7 @@ void display2()//Bucket
 
 	for (i = 0; i < 9; i++)//Droplet
 	{
-		if (A[i] == 1)//Packet
+		if (input_arr[i] == 1)//Packet
 		{
 			glColor3f(0.0, 0.0, 1.0);
 			glBegin(GL_POLYGON);
@@ -338,7 +338,7 @@ void display2()//Bucket
 	k = 0;
 	for (j = 0; j < 9; j++)//525=Rim of bucket
 	{
-		if (B[j] == 0 && A[j] == 1)
+		if (final_arr[j] == 0 && input_arr[j] == 1)
 		{
 			Y1 = 350 - k * 30;
 			Y2 = 335 - k * 30;
@@ -358,7 +358,7 @@ void display2()//Bucket
 }
 
 
-void display1()//Drawing the Graph
+void display_graph()//Drawing the Graph
 {
 	
 	PI[0][1] = 10; PI[0][0] = 10;
@@ -413,7 +413,7 @@ void display1()//Drawing the Graph
 		glVertex2i(v, 940);
 		glEnd();
 	}
-	polygon(A);
+	conf_packet(input_arr);
 	leaky_bucket();
 
 	glColor3f(0.0, 0.0, 0.0);//Base of packet line on top
@@ -472,7 +472,7 @@ void display1()//Drawing the Graph
 	glFlush();
 }
 
-void display()//Main Page
+void display_menu()//Main Page
 {
 	int i;
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -501,25 +501,25 @@ void display()//Main Page
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	glColor3f(0.5, 0.0, 0.0);
-	reassign_arr("PRESS : g FOR GRAPH", print_str);
-	glRasterPos2f(300.0, 650.0);
+	reassign_arr("PRESS : 1 FOR HOME PAGE", print_str);
+	glRasterPos2f(320.0, 650.0);
 	for (i = 0; print_str[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	glColor3f(0.5, 0.0, 0.0);
-	reassign_arr("b FOR BUCKET", print_str);
+	reassign_arr("2 FOR BUCKET", print_str);
 	glRasterPos2f(375.0, 600.0);
 	for (i = 0; print_str[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	glColor3f(0.5, 0.0, 0.0);
-	reassign_arr("h FOR HOME PAGE", print_str);
+	reassign_arr("3 FOR GRAPH", print_str);
 	glRasterPos2f(375.0, 550.0);
 	for (i = 0; print_str[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
 
 	glColor3f(0.5, 0.0, 0.0);
-	reassign_arr("e FOR EXIT", print_str);
+	reassign_arr("4 FOR EXIT", print_str);
 	glRasterPos2f(375.0, 500.0);
 	for (i = 0; print_str[i] != '\0'; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, print_str[i]);
@@ -563,7 +563,7 @@ int main(int argc, char** argv)
 	int i;
 	for (i = 0; i < 9; i++)
 	{
-		scanf("%d", &A[i]);
+		scanf("%d", &input_arr[i]);
 	}
 
 	glutInit(&argc, argv);
@@ -572,7 +572,7 @@ int main(int argc, char** argv)
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow("Leaky Bucket");
 	glutKeyboardFunc(myKeyboardFunc);
-	glutDisplayFunc(display);
+	glutDisplayFunc(display_menu);
 	glClearColor(0.9, 0.9, 0.9, 1.0);
 	myinit();
 	glutMainLoop();
@@ -583,13 +583,13 @@ void myKeyboardFunc(unsigned char Key, int x, int y)
 {
 	switch (Key)
 	{
-	case 'g': display1();
+	case '1': display_menu();
 		break;
-	case 'b': display2();
+	case '2': display_bucket();
 		break;
-	case 'h':display();
+	case '3':display_graph();
 		break;
-	case 'e': exit(0);
+	case '4': exit(0);
 	default:
 		break;
 	}
