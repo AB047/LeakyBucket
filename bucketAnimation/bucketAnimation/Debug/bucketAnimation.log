@@ -1,47 +1,47 @@
 ﻿  Source.cpp
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(34,15): warning C4305:  '-=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(53,16): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(54,26): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(57,18): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(58,19): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(59,19): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(60,18): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(62,27): warning C4305:  'argument': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(66,18): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(67,19): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(68,19): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(69,18): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(83,42): warning C4101:  'e': unreferenced local variable
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(194,14): warning C4305:  '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(194,28): warning C4305:  '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(195,14): warning C4305:  '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(195,28): warning C4305:  '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(196,14): warning C4305:  '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(196,28): warning C4305:  '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(197,14): warning C4305:  '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(197,28): warning C4305:  '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(200,14): warning C4305:  '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(201,14): warning C4305:  '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(203,18): warning C4305:  'argument': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(215,22): warning C4305:  'argument': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(240,25): warning C4305:  'argument': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(268,15): warning C4305:  '-=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(269,15): warning C4305:  '-=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(270,15): warning C4305:  '-=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(271,15): warning C4305:  '-=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(276,54): warning C4305:  'argument': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(279,13): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(280,13): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(284,14): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(285,14): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(286,14): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(287,14): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(292,51): warning C4305:  'argument': truncation from 'double' to 'GLfloat'
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(299,14): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(300,14): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(304,15): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(305,15): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(306,15): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(307,15): warning C4244:  'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\source\repos\bucketAnimation\bucketAnimation\Source.cpp(335,33): warning C4305:  'argument': truncation from 'double' to 'GLclampf'
-  bucketAnimation.vcxproj -> C:\Users\91876\source\repos\bucketAnimation\Debug\bucketAnimation.exe
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(42,28): warning C4305: '-=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(61,16): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(62,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(65,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(66,19): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(67,19): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(68,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(70,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(74,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(75,19): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(76,19): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(77,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(91,42): warning C4101: 'e': unreferenced local variable
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(202,22): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(215,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(215,28): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(216,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(216,28): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(217,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(217,28): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(218,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(218,28): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(221,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(222,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(224,18): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(252,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(290,15): warning C4305: '-=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(291,15): warning C4305: '-=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(292,15): warning C4305: '-=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(293,15): warning C4305: '-=': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(298,54): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(301,13): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(302,13): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(306,14): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(307,14): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(308,14): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(309,14): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(314,51): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(321,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(322,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(326,15): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(327,15): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(328,15): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(329,15): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\GitRepos\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(352,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+  bucketAnimation.vcxproj -> D:\GitRepos\LeakyBucket\bucketAnimation\Debug\bucketAnimation.exe

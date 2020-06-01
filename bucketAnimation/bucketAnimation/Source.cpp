@@ -15,11 +15,18 @@ GLfloat w[2];//Water inside the bucket
 GLfloat x[2];
 GLfloat y[2];
 GLfloat z[2];
+
 GLint cnt = 0;//Count of non-conforming packets 
+
 int font;//font of text
+
+int track_packet = 0;
+
 char print_str[1024];
-GLfloat ypos = 10;
-GLfloat xpos = 5;
+
+GLfloat ypos[9] = { 7 };
+GLfloat xpos[9] = { 4 };
+
 
 void nonconf_packet(GLint* final_arr);
 void leaky_bucket();
@@ -30,11 +37,12 @@ void display_bucket();
 
 void idle() {
 	
-	if (ypos >= 5) {
-		ypos -= 0.01;
+	//ypos = 10;
+	if (ypos[track_packet]>= 4) {
+	ypos[track_packet] -= 0.01;
 	}
 	else {
-		ypos += 5;
+		track_packet++;
 	}
 	
 	glutPostRedisplay();
@@ -186,9 +194,22 @@ void print_message(const char* str, GLfloat x, GLfloat y)
 
 }
 
+void animate_packet(int packet_flag)
+{
+	glPushMatrix();
+	glColor3f(0, 0, 1);
+	glTranslatef(xpos[track_packet], ypos[track_packet], 0);
+	glScalef(1.5, 1.9, 3);
+	if (packet_flag)
+		glutSolidCube(0.2);
+	else
+		glutWireCube(0.2);
+	glPopMatrix();
+}
+
 void display_bucket()//Bucket
 {
-	glutIdleFunc(idle);
+	//glutIdleFunc(idle);
 	leaky_bucket();
 	int i, j, k, Y1, Y2;
 	a[0] = 3.950; a[1] = 7.670;
@@ -205,17 +226,8 @@ void display_bucket()//Bucket
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0, 0, 1);
 	
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	gluOrtho2D(0, 10, 0, 10);
+	// animate_packet(1);
 
-	glPushMatrix();
-	glColor3f(0, 0, 1);
-	glTranslatef(xpos, ypos, 0);
-	glScalef(1.5, 1.9, 3);
-	glutSolidCube(0.2);
-
-	glPopMatrix();
 	glPushMatrix();
 	//bucket
 	glColor3f(1.0, 0.0, 0.0);
@@ -242,11 +254,14 @@ void display_bucket()//Bucket
 
 	glColor3f(0.5, 0.5, 0.0);
 	print_message("INCOMING PACKETS ", 3.000, 8.000);
+	
+	
 
 	for (i = 0; i < 9; i++)//Droplet
 	{
 		if (input_arr[i] == 1)//Packet
 		{
+			/*
 			glColor3f(0.0, 0.0, 1.0);
 			glBegin(GL_POLYGON);
 			glVertex2fv(a);
@@ -254,9 +269,13 @@ void display_bucket()//Bucket
 			glVertex2fv(c);
 			glVertex2fv(d);
 			glEnd();
+			*/
+
+			animate_packet(1);
 		}
 		else//Not existing packet
 		{
+			/*
 			glColor3f(0.0, 0.0, 1.0);
 			glBegin(GL_LINE_LOOP);
 			glVertex2fv(a);
@@ -264,13 +283,16 @@ void display_bucket()//Bucket
 			glVertex2fv(c);
 			glVertex2fv(d);
 			glEnd();
+			*/
+
+			animate_packet(0);
 		}
 		a[1] -= 0.30;
 		b[1] -= 0.30;
 		c[1] -= 0.30;
-		d[1] -= 0.30;
+		d[1] -= 0.30; 
 
-	}
+	} 
 	
 	glColor3f(0.5, 0.5, 0.0);
 	print_message("NON CONFORMING PACKETS", 5.700, 5.250);
@@ -313,11 +335,6 @@ void display_bucket()//Bucket
 	glutSwapBuffers();
 }
 
-
-
-
-
-
 int main(int argc, char** argv)
 {
 	printf("Given 9 slots, select your packets in binary values\n");
@@ -333,7 +350,11 @@ int main(int argc, char** argv)
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow("Leaky Bucket");
 	glClearColor(0.9, 0.9, 0.9, 1.0);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	gluOrtho2D(0, 10, 0, 10);
 	glutDisplayFunc(display_bucket);
+	// glutReshapeFunc(changeSize);
 	glutIdleFunc(idle);
 	//glutTimerFunc(1000, idle, 0);
 	glutMainLoop();
