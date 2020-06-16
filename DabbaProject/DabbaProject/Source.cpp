@@ -166,22 +166,27 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 	int i = 0, j, k, count = 0, C = 0, val, e;
 	for (i = 0; i < 9; i++)//Finding the initial packet postion
 	{
-		if (input_arr[i] == 0)
+		if (input_arr[i] == 0) {
 			count++;
+			
+		}
 		else
+		{
+			final_arr[i] = 0;
 			break;
+		}
 	}
 	PI[0][0] += (count * 100);
 	j = i;//First packet
 	PF[0][0] += count * 100;
 	while (j < 9)
 	{
-
 		count = 0;
 		if (input_arr[j] == 1)
 		{
+			
 			PF[0][1] += 300;
-			if(C+3<=9)
+			if (C + 3 <= 9)
 				C += 3;
 			if (PF[0][1] > 910)
 			{
@@ -215,21 +220,25 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 			{
 				if (input_arr[k] == 0)
 				{
+					
 					count++;
 					C -= 1;
+					PF[0][1] = PF[0][1] - 100;
+					PF[0][0] = PF[0][0] + 100;
+					print_packet(C);
 				}
-				else
+				else {
+					final_arr[k] = 0;
 					break;
+				}
 			}
-			PF[0][1] = PF[0][1] - (100 * count);
-			PF[0][0] = PF[0][0] + (100 * count);
+
 			if (PF[0][1] < 10)
 			{
 				val = 10 - PF[0][1];
 				PF[0][0] -= val;
 				PF[0][1] = 10;
 				draw_graph(PI[0], PF[0], C);
-
 				PI[0][0] = PF[0][0] + val;
 				PI[0][1] = PF[0][1];
 				PF[0][0] += val;
@@ -246,7 +255,9 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 		}
 
 	}
+
 	nonconf_packet(final_arr);
+
 }
 
 
@@ -259,24 +270,16 @@ void display_bucket()//Bucket
 	b[0] = 405.0; b[1] = 767.0;
 	c[0] = 405.0; c[1] = 792.0;
 	d[0] = 395.0; d[1] = 792.0;
-	w[0] = 300.0; w[1] = 350.0;
-	x[0] = 500.0; x[1] = 350.0;
-	y[0] = 535.0; y[1] = 475.0;
-	z[0] = 265.0; z[1] = 475.0;
+	w[0] = 330.0; w[1] = 350.0;
+	x[0] = 470.0; x[1] = 350.0;
+	y[0] = 505.0; y[1] = 475.0;
+	z[0] = 295.0; z[1] = 475.0;
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(5.0);
 
-	//bucket
-	glColor3f(1.0, 0.0, 0.0);
-	glBegin(GL_LINE_LOOP);
-	glVertex2f(300.0, 350.0);
-	glVertex2f(500.0, 350.0);
-	glVertex2f(550.0, 525.0);
-	glVertex2f(250.0, 525.0);
-	glEnd();
-
+	
 	//water
-	glColor3f(0.0, 0.0, 1.0);
+	glColor3f(0.0, 0.5, 0.8);
 	glBegin(GL_POLYGON);
 	glVertex2fv(w);
 	glVertex2fv(x);
@@ -284,17 +287,28 @@ void display_bucket()//Bucket
 	glVertex2fv(z);
 	glEnd();
 
-	glColor3f(0.5, 0.9, 0.0);
-	print_message("PICTORIAL REPRESENTATION ", 300.0, 900.0);
+	//bucket
+	glLineWidth(3);
+	glColor3f(0.2, 0.2, 0.2);
+	glBegin(GL_LINE_LOOP);
+	glVertex2f(330.0, 350.0);
+	glVertex2f(470.0, 350.0);
+	glVertex2f(520.0, 525.0);
+	glVertex2f(280.0, 525.0);
+	glEnd();
+	glLineWidth(1);
 
-	glColor3f(0.5, 0.5, 0.0);
+	glColor3f(0.2, 0.2, 0.2);
+	print_message("PICTORIAL REPRESENTATION ", 400.0, 900.0);
+
+	glColor3f(0.0, 0.5, 0.5);
 	print_message("INCOMING PACKETS ", 300.0, 800.0);
 
 	for (i = 0; i < 9; i++)//Droplet
 	{
 		if (input_arr[i] == 1)//Packet
 		{
-			glColor3f(0.0, 0.0, 1.0);
+			glColor3f(0.0, 0.5, 0.5);
 			glBegin(GL_POLYGON);
 			glVertex2fv(a);
 			glVertex2fv(b);
@@ -304,7 +318,7 @@ void display_bucket()//Bucket
 		}
 		else//Not existing packet
 		{
-			glColor3f(0.0, 0.0, 1.0);
+			glColor3f(0.0, 0.5, 0.5);
 			glBegin(GL_LINE_LOOP);
 			glVertex2fv(a);
 			glVertex2fv(b);
@@ -318,35 +332,35 @@ void display_bucket()//Bucket
 		d[1] -= 30;
 
 	}
-	glColor3f(0.5, 0.5, 0.0);
-	print_message("NON CONFORMING PACKETS", 570.0, 525.0);
+	glColor3f(0.4, 0.0, 0.0);
+	print_message("NON CONFORMING PACKETS", 540.0, 525.0);
 
 	for (j = 0; j < cnt; j++)//525=Rim of bucket
 	{
 		Y1 = 525 - j * 30;
 		Y2 = 510 - j * 30;
 
-		glColor3f(1.0, 0.0, 0.0);
+		glColor3f(0.4, 0.0, 0.0);
 		glBegin(GL_LINE_LOOP);//Drawing the non-conforming packets along the rim
-		glVertex2i(550, Y1);
-		glVertex2i(560, Y1);
-		glVertex2i(560, Y2);
-		glVertex2i(550, Y2);
+		glVertex2i(520, Y1);
+		glVertex2i(530, Y1);
+		glVertex2i(530, Y2);
+		glVertex2i(520, Y2);
 		glEnd();
 	}
 
-	glColor3f(0.5, 0.5, 0.0);
+	glColor3f(0.0, 0.5, 0.0);
 	print_message("CONFORMING PACKETS ", 415.0, 290.0);
 
 	k = 0;
 	for (j = 0; j < 9; j++)//525=Rim of bucket
 	{
-		if (final_arr[j] == 0 && input_arr[j] == 1)
+		if (final_arr[j] == 0 || input_arr[j] == 1)
 		{
 			Y1 = 350 - k * 30;
 			Y2 = 335 - k * 30;
 
-			glColor3f(0.0, 1.0, 0.0);
+			glColor3f(0.0, 0.5, 0.0);
 			glBegin(GL_LINE_LOOP);//Drawing the non-conforming packets along the rim
 			glVertex2i(395, Y1);
 			glVertex2i(405, Y1);
@@ -455,43 +469,61 @@ void display_graph()//Drawing the Graph
 	glFlush();
 }
 
+
 void display_menu()//Main Page
 {
 	int i;
 
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0, 0.0, 0.0);
-	print_message("LEAKY BUCKET ALGORITHM ", 400.0, 900.0);
 
-	glColor3f(0.0, 0.0, 1.0);
-	print_message("WHERE : ", 300.0, 800.0);
 
-	glColor3f(0.0, 0.5, 0.0);
-	print_message("PACKET SIZE (I) : 3 ", 380.0, 800.0);
-	
-	glColor3f(0.0, 0.5, 0.0);
-	print_message("BUCKET DEPTH (L) : 9 ", 380.0, 750.0);
-	
-	glColor3f(0.5, 0.0, 0.0);
-	print_message("PRESS : 1 FOR HOME PAGE ", 320.0, 650.0);
-	
-	glColor3f(0.5, 0.0, 0.0);
-	print_message("2 FOR BUCKET", 375.0, 600.0);
-	
-	glColor3f(0.5, 0.0, 0.0);
-	print_message("3 FOR GRAPH ", 375.0, 550.0);
-	
-	glColor3f(0.5, 0.0, 0.0);
-	print_message("4 FOR EXIT ", 375.0, 500.0);
+	glColor3f(0.0, 0.2, 0.2);
+	print_message("SJB INSTITUTE OF TECHNOLOGY ", 360.0, 800.0);
 
-	glColor3f(0.5, 0.0, 0.5);
-	print_message("DONE BY: ", 200.0, 400.0);
+	glColor3f(0.0, 0.25, 0.25);
+	print_message("COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT ", 280.0, 750.0);
+
+	glColor3f(0.0, 0.3, 0.3);
+	print_message("LEAKY BUCKET ALGORITHM ", 380.0, 700.0);
+
+	glColor3f(0.0, 0.35, 0.35);
+	print_message("WHERE : ", 378.0, 600.0);
+
+	glColor3f(0.0, 0.4, 0.4);
+	print_message("PACKET SIZE (I) : 3 ", 440.0, 600.0);
 	
-	glColor3f(1.0, 0.0, 1.0);
-	print_message("1JB17CS027 : ATUL M. BHARADWAJ ", 200.0, 350.0);
+	glColor3f(0.0, 0.45, 0.45);
+	print_message("BUCKET DEPTH (L) : 9 ", 440.0, 550.0);
 	
-	glColor3f(1.0, 0.0, 1.0);
-	print_message("1JB17CS021 : ANUSHA S. ", 200.0, 300.0);
+	glColor3f(0.0, 0.5, 0.5);
+	print_message("PRESS : 1 FOR HOME PAGE ", 380.0, 450.0);
+	
+	glColor3f(0.0, 0.55, 0.55);
+	print_message("2 FOR BUCKET", 439.0, 400.0);
+	
+	glColor3f(0.0, 0.6, 0.6);
+	print_message("3 FOR GRAPH ", 439.0, 350.0);
+	
+	glColor3f(0.0, 0.65, 0.65);
+	print_message("4 FOR EXIT ", 439.0, 300.0);
+
+	glColor3f(0.0, 0.7, 0.7);
+	print_message("DONE BY: ", 200.0, 250.0);
+	
+	glColor3f(0.0, 0.74, 0.74);
+	print_message("1JB17CS027 : ATUL M. BHARADWAJ ", 200.0, 200.0);
+	
+	glColor3f(0.0, 0.74, 0.74);
+	print_message("1JB17CS021 : ANUSHA S. ", 200.0, 150.0);
+
+	glColor3f(0.0, 0.7, 0.7);
+	print_message("UNDER THE GUIDANCE OF:", 600.0, 250.0);
+
+	glColor3f(0.0, 0.74, 0.74);
+	print_message("MANASA B. S.", 600.0, 200.0);
+
+	glColor3f(0.0, 0.74, 0.74);
+	print_message("SRINIDHI K. S.", 600.0, 150.0);
 	
 	glFlush();
 	

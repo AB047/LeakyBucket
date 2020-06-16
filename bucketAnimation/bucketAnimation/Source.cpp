@@ -17,15 +17,15 @@ GLfloat y[2];
 GLfloat z[2];
 
 GLint cnt = 0;//Count of non-conforming packets 
-
+bool check = false;
 int font;//font of text
-
+int packet = 0;
 int track_packet = 0;
 
 char print_str[1024];
 
-GLfloat ypos[9] = { 7 };
-GLfloat xpos[9] = { 4 };
+GLfloat ypos =  7 ;
+GLfloat xpos =  4 ;
 
 
 void nonconf_packet(GLint* final_arr);
@@ -33,21 +33,11 @@ void leaky_bucket();
 void reassign_arr(const char* str, char* arr);
 void print_message(const char* str, GLfloat x, GLfloat y);
 void display_bucket();
+void mouse(int button, int state, int x, int y);
+void timer(int);
 
 
-void idle() {
-	
-	//ypos = 10;
-	if (ypos[track_packet]>= 4) {
-	ypos[track_packet] -= 0.01;
-	}
-	else {
-		track_packet++;
-	}
-	
-	glutPostRedisplay();
-	//glutTimerFunc(100, idle, 0);
-}
+
 void nonconf_packet(GLint* final_arr) //NON CONFORMING packets
 {
 
@@ -79,9 +69,8 @@ void nonconf_packet(GLint* final_arr) //NON CONFORMING packets
 			glLineWidth(1);
 		}
 	}
-
-
 }
+
 
 void leaky_bucket() // ALGORITHM :CALCULATION 
 {
@@ -105,20 +94,14 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 		count = 0;
 		if (input_arr[j] == 1)
 		{
-			PF[0][1] += 300;
 			if (C + 3 <= 9)
 				C += 3;
-			if (PF[0][1] > 910)
+			if (PF[0][1] < 910)
 			{
-				PF[0][1] -= 300;
+				PF[0][1] += 300;
 				final_arr[j] = 1;
-
 			}
 			//draw_graph(PI[0], PF[0], C);//Vertical Line,I=3
-
-			X = PF[0][1] + 2;
-			Y = PF[0][1] + 2;
-			glColor3f(1.0, 1.0, 1.0);
 
 			PI[0][0] = PF[0][0];
 			PI[0][1] = PF[0][1];
@@ -198,12 +181,13 @@ void animate_packet(int packet_flag)
 {
 	glPushMatrix();
 	glColor3f(0, 0, 1);
-	glTranslatef(xpos[track_packet], ypos[track_packet], 0);
+	glTranslatef(xpos, ypos, 0);
 	glScalef(1.5, 1.9, 3);
 	if (packet_flag)
 		glutSolidCube(0.2);
 	else
 		glutWireCube(0.2);
+	
 	glPopMatrix();
 }
 
@@ -212,6 +196,7 @@ void display_bucket()//Bucket
 	//glutIdleFunc(idle);
 	leaky_bucket();
 	int i, j, k, Y1, Y2;
+
 	a[0] = 3.950; a[1] = 7.670;
 	b[0] = 4.050; b[1] = 7.670;
 	c[0] = 4.050; c[1] = 7.920;
@@ -225,7 +210,7 @@ void display_bucket()//Bucket
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0, 0, 1);
-	
+
 	// animate_packet(1);
 
 	glPushMatrix();
@@ -254,61 +239,40 @@ void display_bucket()//Bucket
 
 	glColor3f(0.5, 0.5, 0.0);
 	print_message("INCOMING PACKETS ", 3.000, 8.000);
-	
-	
 
-	for (i = 0; i < 9; i++)//Droplet
-	{
-		if (input_arr[i] == 1)//Packet
-		{
-			/*
-			glColor3f(0.0, 0.0, 1.0);
-			glBegin(GL_POLYGON);
-			glVertex2fv(a);
-			glVertex2fv(b);
-			glVertex2fv(c);
-			glVertex2fv(d);
-			glEnd();
-			*/
-
-			animate_packet(1);
+	
+		
+		if (check) {
+			if (input_arr[packet] == 1)//Packet
+			{
+				animate_packet(1);
+			}
+			else//Not existing packet
+			{
+				animate_packet(0);
+			}
+			
 		}
-		else//Not existing packet
-		{
-			/*
-			glColor3f(0.0, 0.0, 1.0);
-			glBegin(GL_LINE_LOOP);
-			glVertex2fv(a);
-			glVertex2fv(b);
-			glVertex2fv(c);
-			glVertex2fv(d);
-			glEnd();
-			*/
-
-			animate_packet(0);
-		}
-		a[1] -= 0.30;
-		b[1] -= 0.30;
-		c[1] -= 0.30;
-		d[1] -= 0.30; 
-
-	} 
 	
+	 
 	glColor3f(0.5, 0.5, 0.0);
 	print_message("NON CONFORMING PACKETS", 5.700, 5.250);
 	for (j = 0; j < cnt; j++)//525=Rim of bucket
 	{
 		Y1 = 5.25 - j * 0.30;
 		Y2 = 5.10 - j * 0.30;
-
+		
+		
 		glColor3f(1.0, 0.0, 0.0);
 		glBegin(GL_LINE_LOOP);//Drawing the non-conforming packets along the rim
-		glVertex2i(5.50, Y1);
-		glVertex2i(5.60, Y1);
-		glVertex2i(5.60, Y2);
-		glVertex2i(5.50, Y2);
+		glVertex2i(550, Y1);
+		glVertex2i(560, Y1);
+		glVertex2i(560, Y2);
+		glVertex2i(550, Y2);
 		glEnd();
+		
 	}
+
 
 	glColor3f(0.5, 0.5, 0.0);
 	print_message("CONFORMING PACKETS ", 4.150, 2.900);
@@ -332,8 +296,45 @@ void display_bucket()//Bucket
 		}
 
 	}
+	
 	glutSwapBuffers();
 }
+
+void mouse(int button, int state, int x, int y) 
+{
+	int i;
+	//check = false;
+	if (packet < 9) {
+		if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+			ypos = 7;
+			check = true;
+		}
+	}
+	glutPostRedisplay();
+}
+
+void reshape(int w, int h) {
+	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(0, 10, 0, 10);
+	glMatrixMode(GL_MODELVIEW);
+}
+
+void timer(int) {
+	glutPostRedisplay();
+	glutTimerFunc(1000 / 60, timer, 0);
+
+	if (ypos > 4) {
+		ypos -= 0.03;
+	}
+
+	else {
+		check = false;
+		
+	}
+}
+
 
 int main(int argc, char** argv)
 {
@@ -345,18 +346,17 @@ int main(int argc, char** argv)
 		scanf("%d", &input_arr[i]);
 	}
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
 	glutInitWindowSize(1000, 1000);
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow("Leaky Bucket");
 	glClearColor(0.9, 0.9, 0.9, 1.0);
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	gluOrtho2D(0, 10, 0, 10);
+	
+	glutMouseFunc(mouse);
+	
 	glutDisplayFunc(display_bucket);
-	// glutReshapeFunc(changeSize);
-	glutIdleFunc(idle);
-	//glutTimerFunc(1000, idle, 0);
+	glutReshapeFunc(reshape);
+	glutTimerFunc(1000,timer,0);
 	glutMainLoop();
 	return 0;
 }
