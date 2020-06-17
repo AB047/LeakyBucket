@@ -1,43 +1,43 @@
 ﻿  Source.cpp
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(51,16): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(52,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(55,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(56,19): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(57,19): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(58,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(60,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(64,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(65,19): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(66,19): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(67,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(80,42): warning C4101: 'e': unreferenced local variable
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(77,11): warning C4101: 'Y': unreferenced local variable
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(77,8): warning C4101: 'X': unreferenced local variable
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(185,22): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(200,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(200,28): warning C4305: '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(201,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(201,28): warning C4305: '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(202,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(202,28): warning C4305: '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(203,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(203,28): warning C4305: '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(206,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(207,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(209,18): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(237,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(259,54): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(262,13): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(263,13): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(278,51): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(285,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(286,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(290,15): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(291,15): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(292,15): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(293,15): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(198,6): warning C4101: 'i': unreferenced local variable
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(305,6): warning C4101: 'i': unreferenced local variable
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(331,15): warning C4305: '-=': truncation from 'double' to 'GLfloat'
-C:\Users\91876\Desktop\bucketAnimation\bucketAnimation\Source.cpp(355,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-  bucketAnimation.vcxproj -> C:\Users\91876\Desktop\bucketAnimation\Debug\bucketAnimation.exe
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(51,16): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(52,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(55,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(56,19): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(57,19): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(58,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(60,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(64,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(65,19): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(66,19): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(67,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(80,42): warning C4101: 'e': unreferenced local variable
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(77,11): warning C4101: 'Y': unreferenced local variable
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(77,8): warning C4101: 'X': unreferenced local variable
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(185,22): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(200,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(200,28): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(201,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(201,28): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(202,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(202,28): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(203,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(203,28): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(206,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(207,14): warning C4305: '=': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(209,18): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(237,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(259,54): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(262,13): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(263,13): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(278,51): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(285,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(286,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(290,15): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(291,15): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(292,15): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(293,15): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(198,6): warning C4101: 'i': unreferenced local variable
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(305,6): warning C4101: 'i': unreferenced local variable
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(330,15): warning C4305: '-=': truncation from 'double' to 'GLfloat'
+D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(354,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+  bucketAnimation.vcxproj -> D:\leaky bucket\LeakyBucket\bucketAnimation\Debug\bucketAnimation.exe

@@ -19,7 +19,7 @@ GLfloat z[2];
 GLint cnt = 0;//Count of non-conforming packets 
 bool check = false;
 int font;//font of text
-int packet = 0;
+int packet = -1;
 int track_packet = 0;
 
 char print_str[1024];
@@ -304,10 +304,11 @@ void mouse(int button, int state, int x, int y)
 {
 	int i;
 	//check = false;
-	if (packet < 9) {
+	if (packet < 8) {
 		if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
 			ypos = 7;
 			check = true;
+			packet++;
 		}
 	}
 	glutPostRedisplay();
