@@ -508,22 +508,22 @@ void display_menu()//Main Page
 	print_message("4 FOR EXIT ", 439.0, 300.0);
 
 	glColor3f(0.0, 0.7, 0.7);
-	print_message("DONE BY: ", 200.0, 250.0);
+	print_message("DONE BY: ", 180.0, 250.0);
 	
 	glColor3f(0.0, 0.74, 0.74);
-	print_message("1JB17CS027 : ATUL M. BHARADWAJ ", 200.0, 200.0);
+	print_message("1JB17CS027 : ATUL M. BHARADWAJ ", 180.0, 200.0);
 	
 	glColor3f(0.0, 0.74, 0.74);
-	print_message("1JB17CS021 : ANUSHA S. ", 200.0, 150.0);
+	print_message("1JB17CS021 : ANUSHA S. ", 180.0, 150.0);
 
 	glColor3f(0.0, 0.7, 0.7);
 	print_message("UNDER THE GUIDANCE OF:", 600.0, 250.0);
 
 	glColor3f(0.0, 0.74, 0.74);
-	print_message("MANASA B. S.", 600.0, 200.0);
+	print_message("MANASA B. S. (Asst. Professor, CSE)", 600.0, 200.0);
 
 	glColor3f(0.0, 0.74, 0.74);
-	print_message("SRINIDHI K. S.", 600.0, 150.0);
+	print_message("SRINIDHI K. S. (Asst. Professor, CSE)", 600.0, 150.0);
 	
 	glFlush();
 	
