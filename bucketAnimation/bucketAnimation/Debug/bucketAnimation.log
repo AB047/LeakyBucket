@@ -40,4 +40,5 @@ D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(198,6): w
 D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(305,6): warning C4101: 'i': unreferenced local variable
 D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(330,15): warning C4305: '-=': truncation from 'double' to 'GLfloat'
 D:\leaky bucket\LeakyBucket\bucketAnimation\bucketAnimation\Source.cpp(354,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+  LINK : D:\leaky bucket\LeakyBucket\bucketAnimation\Debug\bucketAnimation.exe not found or not built by the last incremental link; performing full link
   bucketAnimation.vcxproj -> D:\leaky bucket\LeakyBucket\bucketAnimation\Debug\bucketAnimation.exe
