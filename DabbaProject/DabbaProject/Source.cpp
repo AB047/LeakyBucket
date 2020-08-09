@@ -20,6 +20,12 @@ GLfloat z[2];
 GLint cnt = 0;//Count of non-conforming packets 
 int font;//font of text
 char print_str[1024];
+int k;
+int start = 0;
+int overflow = 0;
+int temp = 0;
+int pk[30];
+int count = 0;
 
 void myKeyboardFunc(unsigned char Key, int x, int y);
 
@@ -81,15 +87,6 @@ void draw_graph(GLint* a, GLint* b, GLint NoPackets) //DRAW LINES
 	print_packet(NoPackets);
 }
 
-void draw_line_1() //DRAW LINES
-{
-
-	glColor3f(1.0, 0.0, 1.0);
-	glBegin(GL_LINES);
-	glVertex2iv(PI[0]);
-	glVertex2iv(PF[0]);
-	glEnd();
-}
 
 void nonconf_packet(GLint* final_arr) //NON CONFORMING packets
 {
@@ -157,6 +154,7 @@ void conf_packet(GLint* a) //CONFORMING PACKETS
 
 	}
 }
+
 
 void leaky_bucket() // ALGORITHM :CALCULATION 
 {
@@ -259,120 +257,362 @@ void leaky_bucket() // ALGORITHM :CALCULATION
 	nonconf_packet(final_arr);
 
 }
-
-
-void display_bucket()//Bucket
+int compute()
 {
+	count = 0;
+	int op = 1, bucketsize = 9, n = 9, i;
 
-	leaky_bucket();
-	int i, j, k, Y1, Y2;
-	a[0] = 395.0; a[1] = 767.0;
-	b[0] = 405.0; b[1] = 767.0;
-	c[0] = 405.0; c[1] = 792.0;
-	d[0] = 395.0; d[1] = 792.0;
-	w[0] = 330.0; w[1] = 350.0;
-	x[0] = 470.0; x[1] = 350.0;
-	y[0] = 505.0; y[1] = 475.0;
-	z[0] = 295.0; z[1] = 475.0;
-	glClear(GL_COLOR_BUFFER_BIT);
-	glPointSize(5.0);
+	int sum = 0;
+	for (i = 1; i <= n; i++)
+	{
+		sum += pk[i];
+		if (sum > bucketsize)
+		{
+			printf("\nbucket overflow\n");
+			overflow = 1;
+			//exit(0);
+		}
+		else
+		{
+			if (sum > op)
+			{
+				printf("\n%d bytes output", op);
+				sum = sum - op;
+				count++;
+			}
+			
+			printf("\n last %d bytes sent", pk[i]);
+			printf("\n bucket output successful\n");
+		}
+	}
+	printf("\n no. of packets sent=%d\n", count);
+	return count;
 
-	
-	//water
-	glColor3f(0.0, 0.5, 0.8);
-	glBegin(GL_POLYGON);
-	glVertex2fv(w);
-	glVertex2fv(x);
-	glVertex2fv(y);
-	glVertex2fv(z);
+}
+void setpoint(GLint x, GLint y)
+{
+	glBegin(GL_POINTS);
+	glVertex2i(x, y);
 	glEnd();
+}
 
-	//bucket
-	glLineWidth(3);
-	glColor3f(0.2, 0.2, 0.2);
-	glBegin(GL_LINE_LOOP);
-	glVertex2f(330.0, 350.0);
-	glVertex2f(470.0, 350.0);
-	glVertex2f(520.0, 525.0);
-	glVertex2f(280.0, 525.0);
-	glEnd();
-	glLineWidth(1);
-
-	glColor3f(0.2, 0.2, 0.2);
-	print_message("PICTORIAL REPRESENTATION ", 400.0, 900.0);
-
+void Circle(int r, int xCenter, int yCenter)
+{
 	glColor3f(0.0, 0.5, 0.5);
-	print_message("INCOMING PACKETS ", 300.0, 800.0);
+	int x = 0, y = r;
+	int d = 3 / 2 - r;
 
-	for (i = 0; i < 9; i++)//Droplet
+	while (x <= y)
 	{
-		if (input_arr[i] == 1)//Packet
+		setpoint(xCenter + x, yCenter + y);
+		setpoint(xCenter + y, yCenter + x);
+		setpoint(xCenter - x, yCenter + y);
+		setpoint(xCenter + y, yCenter - x);
+		setpoint(xCenter - x, yCenter - y);
+		setpoint(xCenter - y, yCenter - x);
+		setpoint(xCenter + x, yCenter - y);
+		setpoint(xCenter - y, yCenter + x);
+
+		if (d < 0)
+			d += (2 * x) + 3;
+		else
 		{
-			glColor3f(0.0, 0.5, 0.5);
-			glBegin(GL_POLYGON);
-			glVertex2fv(a);
-			glVertex2fv(b);
-			glVertex2fv(c);
-			glVertex2fv(d);
-			glEnd();
+			d += (2 * (x - y)) + 5;
+			y -= 1;
 		}
-		else//Not existing packet
-		{
-			glColor3f(0.0, 0.5, 0.5);
-			glBegin(GL_LINE_LOOP);
-			glVertex2fv(a);
-			glVertex2fv(b);
-			glVertex2fv(c);
-			glVertex2fv(d);
-			glEnd();
-		}
-		a[1] -= 30;
-		b[1] -= 30;
-		c[1] -= 30;
-		d[1] -= 30;
-
-	}
-	glColor3f(0.4, 0.0, 0.0);
-	print_message("NON CONFORMING PACKETS", 540.0, 525.0);
-
-	for (j = 0; j < cnt; j++)//525=Rim of bucket
-	{
-		Y1 = 525 - j * 30;
-		Y2 = 510 - j * 30;
-
-		glColor3f(0.4, 0.0, 0.0);
-		glBegin(GL_LINE_LOOP);//Drawing the non-conforming packets along the rim
-		glVertex2i(520, Y1);
-		glVertex2i(530, Y1);
-		glVertex2i(530, Y2);
-		glVertex2i(520, Y2);
-		glEnd();
-	}
-
-	glColor3f(0.0, 0.5, 0.0);
-	print_message("CONFORMING PACKETS ", 415.0, 290.0);
-
-	k = 0;
-	for (j = 0; j < 9; j++)//525=Rim of bucket
-	{
-		if (final_arr[j] == 0 || input_arr[j] == 1)
-		{
-			Y1 = 350 - k * 30;
-			Y2 = 335 - k * 30;
-
-			glColor3f(0.0, 0.5, 0.0);
-			glBegin(GL_LINE_LOOP);//Drawing the non-conforming packets along the rim
-			glVertex2i(395, Y1);
-			glVertex2i(405, Y1);
-			glVertex2i(405, Y2);
-			glVertex2i(395, Y2);
-			glEnd();
-			k++;
-		}
-
+		x++;
 	}
 	glFlush();
 }
+int round1(double number)
+{
+	return (number >= 0) ? (int)(number + 0.5) : (int)(number - 0.5);
+}
+void LineWithDDA(int x0, int y0, int x1, int y1)
+{
+	int dy = y1 - y0;
+	int dx = x1 - x0;
+	int steps, i;
+	float xinc, yinc, x = x0, y = y0;
+	if (abs(dx) > abs(dy))
+	{
+		steps = abs(dx);
+	}
+	else
+	{
+		steps = abs(dy);
+	}
+	xinc = (float)dx / (float)steps;
+	yinc = (float)dy / (float)steps;
+	setpoint(round1(x), round1(y));
+	for (i = 0; i < steps; i++)
+	{
+		x += xinc;
+		y += yinc;
+		setpoint(round1(x), round1(y));
+	}
+	glPointSize(5);
+	glutSwapBuffers();
+}
+void draw() {
+	glPushMatrix();
+	
+	glClear(GL_COLOR_BUFFER_BIT);
+	glLoadIdentity();
+
+
+	int const w = glutGet(GLUT_WINDOW_WIDTH);
+	int const h = glutGet(GLUT_WINDOW_HEIGHT);
+
+	
+	
+	glScalef(2.5, 2.5, 0);
+
+	temp = compute();
+	int x = temp;
+
+	
+	//bucket
+	glPushMatrix();
+	glTranslatef(85, 85, 0);
+	
+
+	glLineWidth(5);
+	glColor3f(0.2, 0.2, 0.2);
+	glBegin(GL_LINE_LOOP);
+	glVertex2f(125, 120);
+	glVertex2f(105, 60);
+	glVertex2f(65, 60);
+	glVertex2f(45, 120);
+	glEnd();
+	//glPopMatrix();
+	
+
+	int i = 1;
+	
+	Circle(3, 85, 183);
+	Circle(1, 85, 183);
+	while (i < 9)
+	{
+		k = 0;
+		while (k < 10000)
+		{
+			int j = 0;
+			while (j < 10000)
+			{
+				j++;
+			}
+			k++;
+		}
+		if (pk[i] > 0) {
+			Circle(3, 85, 183 - (10 * i));
+			Circle(1, 85, 183 - (10 * i));
+		}
+		else {
+			Circle(3, 85, 183 - (10 * i));
+		}
+
+		i++;
+	}
+	//overflow
+	if (overflow == 1)
+	{
+
+		int i = 0;
+		glColor3f(0.0, 0.5, 0.8);
+		LineWithDDA(66, 62, 104, 62);
+		while (i < 58)
+		{
+			k = 0;
+			while (k < 1000)
+			{
+				int j = 0;
+				while (j < 10000)
+				{
+					j++;
+				}
+				k++;
+			}
+
+			LineWithDDA(66-i/3, 62 + i, 104+i/3, 62 + i);
+			i++;
+		}
+
+
+		glColor3f(0.4, 0.0, 0.0);
+		print_message("BUCKET OVERFLOW", 125, 100);
+
+
+	}
+
+
+
+	if (overflow == 0)
+	{
+		i = 0;
+		glColor3f(0.0, 0.5, 0.8);
+		LineWithDDA(66, 62, 104, 62);
+		while (i < 10)
+		{
+			k = 0;
+			while (k < 1000)
+			{
+				int j = 0;
+				while (j < 10000)
+				{
+					j++;
+				}
+				k++;
+			}
+
+			LineWithDDA(66 - i / 3, 62 + i, 104 + i / 3, 62 + i);
+			i++;
+		}
+
+		
+		Circle(1, 85, 63);
+		i = 1;
+		while (i <= count)
+		{
+			k = 0;
+			while (k < 10000)
+			{
+				int j = 0;
+				while (j < 10000)
+				{
+					j++;
+				}
+				k++;
+			}
+			Circle(1, 85, 63 - (10 * i));
+
+			i++;
+		}
+	}
+
+	
+
+	glPopMatrix();
+	glPopMatrix();
+	glutSwapBuffers();
+}
+void display_bucket()//Bucket
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	
+		leaky_bucket();
+		int i, j, k, Y1, Y2;
+		a[0] = 395.0; a[1] = 767.0;
+		b[0] = 405.0; b[1] = 767.0;
+		c[0] = 405.0; c[1] = 792.0;
+		d[0] = 395.0; d[1] = 792.0;
+		w[0] = 330.0; w[1] = 350.0;
+		x[0] = 470.0; x[1] = 350.0;
+		y[0] = 505.0; y[1] = 475.0;
+		z[0] = 295.0; z[1] = 475.0;
+		glClear(GL_COLOR_BUFFER_BIT);
+		glPointSize(5.0);
+
+
+		//water
+		glColor3f(0.0, 0.5, 0.8);
+		glBegin(GL_POLYGON);
+		glVertex2fv(w);
+		glVertex2fv(x);
+		glVertex2fv(y);
+		glVertex2fv(z);
+		glEnd();
+
+		//bucket
+		glLineWidth(3);
+		glColor3f(0.2, 0.2, 0.2);
+		glBegin(GL_LINE_LOOP);
+		glVertex2f(330.0, 350.0);
+		glVertex2f(470.0, 350.0);
+		glVertex2f(520.0, 525.0);
+		glVertex2f(280.0, 525.0);
+		glEnd();
+		glLineWidth(1);
+
+		glColor3f(0.2, 0.2, 0.2);
+		print_message("PICTORIAL REPRESENTATION ", 400.0, 900.0);
+
+		glColor3f(0.0, 0.5, 0.5);
+		print_message("INCOMING PACKETS ", 300.0, 800.0);
+
+		for (i = 0; i < 9; i++)//Droplet
+		{
+			if (input_arr[i] == 1)//Packet
+			{
+				glColor3f(0.0, 0.5, 0.5);
+				glBegin(GL_POLYGON);
+				glVertex2fv(a);
+				glVertex2fv(b);
+				glVertex2fv(c);
+				glVertex2fv(d);
+				glEnd();
+			}
+			else//Not existing packet
+			{
+				glColor3f(0.0, 0.5, 0.5);
+				glBegin(GL_LINE_LOOP);
+				glVertex2fv(a);
+				glVertex2fv(b);
+				glVertex2fv(c);
+				glVertex2fv(d);
+				glEnd();
+			}
+			a[1] -= 30;
+			b[1] -= 30;
+			c[1] -= 30;
+			d[1] -= 30;
+
+		}
+		glColor3f(0.4, 0.0, 0.0);
+		print_message("NON CONFORMING PACKETS", 540.0, 525.0);
+
+		for (j = 0; j < cnt; j++)//525=Rim of bucket
+		{
+			Y1 = 525 - j * 30;
+			Y2 = 510 - j * 30;
+
+			glColor3f(0.4, 0.0, 0.0);
+			glBegin(GL_LINE_LOOP);//Drawing the non-conforming packets along the rim
+			glVertex2i(520, Y1);
+			glVertex2i(530, Y1);
+			glVertex2i(530, Y2);
+			glVertex2i(520, Y2);
+			glEnd();
+		}
+
+		glColor3f(0.0, 0.5, 0.0);
+		print_message("CONFORMING PACKETS ", 415.0, 290.0);
+
+		k = 0;
+		for (j = 0; j < 9; j++)//525=Rim of bucket
+		{
+			if (final_arr[j] == 0 || input_arr[j] == 1)
+			{
+				Y1 = 350 - k * 30;
+				Y2 = 335 - k * 30;
+
+				glColor3f(0.0, 0.5, 0.0);
+				glBegin(GL_LINE_LOOP);//Drawing the non-conforming packets along the rim
+				glVertex2i(395, Y1);
+				glVertex2i(405, Y1);
+				glVertex2i(405, Y2);
+				glVertex2i(395, Y2);
+				glEnd();
+				k++;
+			}
+
+		}
+		glPopMatrix();
+	glFlush();
+	
+}
+
+
 
 
 void display_graph()//Drawing the Graph
@@ -499,31 +739,34 @@ void display_menu()//Main Page
 	print_message("PRESS : 1 FOR HOME PAGE ", 380.0, 450.0);
 	
 	glColor3f(0.0, 0.55, 0.55);
-	print_message("2 FOR BUCKET", 439.0, 400.0);
+	print_message("2 FOR STATIC BUCKET", 439.0, 400.0);
 	
+	glColor3f(0.0, 0.55, 0.55);
+	print_message("3 FOR ANIMATED BUCKET", 439.0, 350.0);
+
 	glColor3f(0.0, 0.6, 0.6);
-	print_message("3 FOR GRAPH ", 439.0, 350.0);
+	print_message("4 FOR GRAPH ", 439.0, 300.0);
 	
 	glColor3f(0.0, 0.65, 0.65);
-	print_message("4 FOR EXIT ", 439.0, 300.0);
+	print_message("5 FOR EXIT ", 439.0, 250.0);
 
 	glColor3f(0.0, 0.7, 0.7);
-	print_message("DONE BY: ", 180.0, 250.0);
+	print_message("DONE BY: ", 180.0, 200.0);
 	
 	glColor3f(0.0, 0.74, 0.74);
-	print_message("1JB17CS027 : ATUL M. BHARADWAJ ", 180.0, 200.0);
+	print_message("1JB17CS027 : ATUL M. BHARADWAJ ", 180.0, 150.0);
 	
 	glColor3f(0.0, 0.74, 0.74);
-	print_message("1JB17CS021 : ANUSHA S. ", 180.0, 150.0);
+	print_message("1JB17CS021 : ANUSHA S. ", 180.0, 100.0);
 
 	glColor3f(0.0, 0.7, 0.7);
-	print_message("UNDER THE GUIDANCE OF:", 600.0, 250.0);
+	print_message("UNDER THE GUIDANCE OF:", 600.0, 200.0);
 
 	glColor3f(0.0, 0.74, 0.74);
-	print_message("MANASA B. S. (Asst. Professor, CSE)", 600.0, 200.0);
+	print_message("MANASA B. S. (Asst. Professor, CSE)", 600.0, 150.0);
 
 	glColor3f(0.0, 0.74, 0.74);
-	print_message("SRINIDHI K. S. (Asst. Professor, CSE)", 600.0, 150.0);
+	print_message("SRINIDHI K. S. (Asst. Professor, CSE)", 600.0, 100.0);
 	
 	glFlush();
 	
@@ -538,6 +781,7 @@ void myinit()
 	glutPostRedisplay();
 }
 
+
 int main(int argc, char** argv)
 {
 
@@ -547,6 +791,7 @@ int main(int argc, char** argv)
 	for (i = 0; i < 9; i++)
 	{
 		scanf("%d", &input_arr[i]);
+		pk[i] = input_arr[i] * 3;
 	}
 
 	glutInit(&argc, argv);
@@ -556,6 +801,7 @@ int main(int argc, char** argv)
 	glutCreateWindow("Leaky Bucket");
 	glutKeyboardFunc(myKeyboardFunc);
 	glutDisplayFunc(display_menu);
+	
 	glClearColor(0.9, 0.9, 0.9, 1.0);
 	myinit();
 	glutMainLoop();
@@ -570,9 +816,11 @@ void myKeyboardFunc(unsigned char Key, int x, int y)
 		break;
 	case '2':leaky_bucket(); display_bucket();
 		break;
-	case '3':display_graph();
+	case '3':draw();
 		break;
-	case '4': exit(0);
+	case '4':display_graph();
+		break;
+	case '5': exit(0);
 	default:
 		break;
 	}

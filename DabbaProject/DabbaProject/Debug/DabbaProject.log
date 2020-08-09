@@ -1,32 +1,39 @@
 ﻿  Source.cpp
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(53,39): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(53,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(57,40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(57,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(71,13): warning C4101: 'y': unreferenced local variable
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(71,10): warning C4101: 'x': unreferenced local variable
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(113,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(145,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(166,42): warning C4101: 'e': unreferenced local variable
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(282,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(292,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(301,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(335,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(343,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(480,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(486,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(489,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(492,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(495,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(501,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(504,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(507,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(510,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(513,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(516,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(519,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(522,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(525,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(475,6): warning C4101: 'i': unreferenced local variable
-D:\leaky bucket\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(559,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-  DabbaProject.vcxproj -> D:\leaky bucket\LeakyBucket\DabbaProject\Debug\DabbaProject.exe
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(59,39): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(59,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(63,40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(63,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(77,13): warning C4101: 'y': unreferenced local variable
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(77,10): warning C4101: 'x': unreferenced local variable
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(110,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(142,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(164,42): warning C4101: 'e': unreferenced local variable
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(336,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(336,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(381,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(422,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(442,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(453,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(518,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(528,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(537,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(571,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(579,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(720,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(726,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(729,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(732,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(735,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(741,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(744,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(747,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(750,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(753,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(756,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(759,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(762,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(765,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(768,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(715,6): warning C4101: 'i': unreferenced local variable
+C:\Users\91876\Desktop\LeakyBucket\DabbaProject\DabbaProject\Source.cpp(805,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+  DabbaProject.vcxproj -> C:\Users\91876\Desktop\LeakyBucket\DabbaProject\Debug\DabbaProject.exe
